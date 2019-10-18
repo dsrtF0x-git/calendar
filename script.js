@@ -5,7 +5,9 @@ function createCalendar(elem, year, month) {
   const days = fullDate.getDay();
   const monthFromZero = fullDate.getMonth() + 1;
   let daysInMonth = 0;
+  
   // Calculating days in month
+  
   switch(monthFromZero) {
     case 1:case 3:case 5:case 7:case 8:case 10:case 12:
       daysInMonth = 31;
@@ -18,7 +20,9 @@ function createCalendar(elem, year, month) {
       break;
     default: break;
   }
+  
   // Creating table with first row
+  
   let table = document.createElement('table');
   calendar.append(table);
   const daysList = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
@@ -31,7 +35,9 @@ function createCalendar(elem, year, month) {
     } 
   table.append(row);
   }
+  
   // Pushing values to cells (value = number day of week (ex: saturday: 6, wednesday: 3, monday: 1))
+  
   let dayCounter = 0;
   while(dayCounter < daysInMonth) {
     if (dayCounter == 0) {
@@ -57,7 +63,9 @@ function createCalendar(elem, year, month) {
     }
     dayCounter++;
   }
+  
   // Replacing values in cells 
+  
   let rows = table.children;
   let trueDays = 1;
   for (let c of rows) {
